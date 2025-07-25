@@ -1,5 +1,266 @@
-* {
+ * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to right, #e0b4ff, #ffb4e0); 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.navbar {
+   margin-top: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+    padding-left: 40rem;
+}
+
+.nav-items {
+    font-weight: 400;
+    font-family: sans-serif;
+    font-size: large;
+}
+
+.logo {
+    width: 150px;
+    margin-left: 150px;
+}
+
+.btn {
+    background-color: #000000;
+    color: white;
+    border-radius: 10px;
+    width: 140px;
+    gap: 10px;
+    height: 40px;
+    border: none;
+    font-size: 16px;
+    margin-left: 100px;
+}
+
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #4776E6 , #8E54E9 );
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+p {
+    color: #696C73;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.hero-session {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rem;
+    padding: 0 20px;
+    margin-left: 10rem;
+}
+
+.hero-session .text {
+    flex: 1;
+}
+
+.hero-session .Image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn1 {
+    background: linear-gradient(135deg, #A1FFCE 0%, #FAFFD1 100%);
+    padding: 10px 30px;
+    border: none;
+    border-radius: 10px;
+    width: 200px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* Hover effect */
+.btn1:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets and smaller screens (portrait mode) */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        padding-left: 2rem;
+        gap: 20px;
+    }
+
+    .logo {
+        margin-left: 0;
+        width: 120px;
+    }
+
+    .hero-session {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 5rem;
+    }
+
+    .hero-session .text {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .btn1 {
+        width: 180px;
+        height: 45px;
+    }
+}
+
+/* For tablets */
+@media screen and (max-width: 768px) {
+    .navbar {
+        margin-top: 20px;
+    }
+
+    .nav-links {
+        padding-left: 2rem;
+        gap: 20px;
+    }
+
+    .logo {
+        margin-left: 0;
+        width: 120px;
+    }
+
+    .hero-session {
+        margin-left: 2rem;
+        margin-top: 5rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .btn1 {
+        width: 180px;
+        height: 45px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    /* Initially hide the hamburger menu and nav-links for mobile */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        z-index: 1000; /* Ensure it's above other content */
+    }
+
+    /* Ionicon hamburger icon size */
+    #hamburger-icon {
+        font-size: 36px; /* Adjust the size of the hamburger icon */
+    }
+
+    /* Initially hide the navigation links on mobile */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* Show nav links when the hamburger icon is clicked */
+    .hamburger input:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .nav-items {
+        padding: 10px 0;
+        font-size: 18px;
+    }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+    .nav-links {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .logo {
+        margin-left: 0;
+        width: 100px;
+    }
+
+    .hero-session {
+        margin-left: 0;
+        margin-top: 3rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .btn1 {
+        width: 160px;
+        height: 40px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .navbar {
+        padding: 0 10px;
+    }
+
+}
+
+/* Hide hamburger checkbox */
+.hamburger input {
+    display: none;
+}
+
+/* Hide hamburger menu for laptops and tablets */
+@media screen and (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
 }
